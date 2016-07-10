@@ -11,8 +11,8 @@ import rx.functions.Func1;
  */
 public class Map {
 	public static void main(String[] args) {
-		Observable<String> observable=Observable.just("ะก");
-		observable.map(new Func1<String, String>() {
+		Observable.just("ะก","ด๓")
+		.map(new Func1<String, String>() {
 
 			@Override
 			public String call(String t) {
