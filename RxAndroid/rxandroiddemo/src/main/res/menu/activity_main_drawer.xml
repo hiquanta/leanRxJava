@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="创建操作" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="变换操作" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="过滤操作" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="结合操作" />
+        <item
+            android:id="@+id/error"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="错误操作" />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="辅助操作" />
+        <item
+            android:id="@+id/contains"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="条件和布尔操作" />
+
+        <item
+            android:id="@+id/math"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="算术和聚合操作" />
+        <item
+            android:id="@+id/contact"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="连接操作" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="分享" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="发送" />
+        </menu>
+    </item>
+
+</menu>
