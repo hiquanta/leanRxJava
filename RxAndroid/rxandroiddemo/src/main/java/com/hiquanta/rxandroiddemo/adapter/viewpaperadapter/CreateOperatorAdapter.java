@@ -3,8 +3,6 @@ package com.hiquanta.rxandroiddemo.adapter.viewpaperadapter;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
-
-import com.hiquanta.rxandroiddemo.ui.fragment.create.CreateFragment;
 import com.hiquanta.rxandroiddemo.ui.fragment.create.CreateItem;
 
 /**
@@ -13,22 +11,17 @@ import com.hiquanta.rxandroiddemo.ui.fragment.create.CreateItem;
 public class CreateOperatorAdapter extends BaseAdapter {
     CreateItem[] tabs;
     Context context;
+
     public CreateOperatorAdapter(Context context, FragmentManager fm) {
         super(fm);
-        this.context=context;
+        this.context = context;
         tabs = CreateItem.values();
     }
 
     @Override
     public Fragment getItem(int position) {
-//        try {
-//            return  tabs[position].getClz().newInstance();
-//        } catch (InstantiationException e) {
-//            e.printStackTrace();
-//        } catch (IllegalAccessException e) {
-//            e.printStackTrace();
-//        }
-        return new CreateFragment();
+
+        return Fragment.instantiate(context, tabs[position].getClz().getName());
     }
 
 
@@ -36,6 +29,7 @@ public class CreateOperatorAdapter extends BaseAdapter {
     public int getCount() {
         return tabs.length;
     }
+
     @Override
     public CharSequence getPageTitle(int position) {
 

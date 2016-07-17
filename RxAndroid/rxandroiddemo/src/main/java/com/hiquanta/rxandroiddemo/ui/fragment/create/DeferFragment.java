@@ -15,18 +15,23 @@ import butterknife.ButterKnife;
  * Created by hiquanta on 2016/7/13.
  */
 public class DeferFragment extends BaseFragment {
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.fragment_create, container, false);
-//        ButterKnife.bind(this, view);
-//
-//
-//        return view;
-//    }
-//
-//    @Override
-//    public void onClick(View v) {
-//
-//    }
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_create, container, false);
+        ButterKnife.bind(this, view);
+        return view;
+    }
+
+
+
+    @Override
+    protected int getDialogRes() {
+        return 0;
+    }
+
+    @Override
+    protected int getTitleRes() {
+        return 0;
+    }
 }

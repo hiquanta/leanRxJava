@@ -13,7 +13,7 @@ public class Empty_Never_Throw {
 
 			@Override
 			public void onCompleted() {
-				
+				System.out.println("onCompleted");
 			}
 
 			@Override
@@ -32,12 +32,12 @@ public class Empty_Never_Throw {
 
 			@Override
 			public void onCompleted() {
-				
+				System.out.println("onCompleted");
 			}
 
 			@Override
 			public void onError(Throwable e) {
-				
+				System.out.println("onError"+e);
 			}
 
 			@Override
@@ -51,7 +51,7 @@ public class Empty_Never_Throw {
 
 			@Override
 			public void onCompleted() {
-				
+				System.out.println("onCompleted");
 			}
 
 			@Override

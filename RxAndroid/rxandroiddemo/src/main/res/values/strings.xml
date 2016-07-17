@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">RxAndroidDemo</string>
-
+    <string name="question_mark">\?</string>
+    <string name="api_source_zhuangbi">本页 内容 来自 <a href="http://blog.csdn.net/baishuheiying/article/details/51910548">更多</a></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -13,4 +14,8 @@
 
     <string name="buffer">buffer</string>
     <string name="flatmap">flatmap</string>
+
+
+    <string name="dialog_create">使用一个函数从头开始创建一个Observable</string>
+
 </resources>

@@ -11,6 +11,7 @@ import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 /**
+ * 定期收集Observable的数据放进一个数据包裹，然后发射这些数据包裹，而不是一次发射一个值。
  * http://blog.csdn.net/axuanqq/article/details/50698532
  * @author hiquanta
  *

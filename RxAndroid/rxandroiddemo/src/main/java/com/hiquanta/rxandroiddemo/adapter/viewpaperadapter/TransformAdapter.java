@@ -4,6 +4,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 
+
+
+/**
+ * bug http://blog.csdn.net/henry121212/article/details/23496913
+ * http://blog.csdn.net/dreamzml/article/details/9951577
+ */
 import com.hiquanta.rxandroiddemo.ui.fragment.translate.TransformItem;
 
 
@@ -18,18 +24,12 @@ public class TransformAdapter extends BaseAdapter {
         super(fm);
         this.context=context;
         tabs = TransformItem.values();
+
     }
 
     @Override
     public Fragment getItem(int position) {
-        try {
-            return tabs[position].getClz().newInstance();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
+       return Fragment.instantiate(context, tabs[position].getClz().getName());
     }
 
 
@@ -43,4 +43,6 @@ public class TransformAdapter extends BaseAdapter {
 
         return context.getString(tabs[position].getResName());
     }
+
+
 }

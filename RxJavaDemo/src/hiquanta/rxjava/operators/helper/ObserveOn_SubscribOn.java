@@ -8,7 +8,6 @@ import rx.schedulers.Schedulers;
  *  ObserveOn:指定一个观察者在哪个调度器上观察这个Observable 
  *  SubscribOn:用来指定Observable在哪个线程上运行
  * @author hiquanta
- *
  */
 public class ObserveOn_SubscribOn {
 		public static void main(String[] args) {

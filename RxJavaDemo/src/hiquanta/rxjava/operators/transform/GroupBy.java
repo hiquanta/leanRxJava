@@ -19,6 +19,7 @@ public class GroupBy {
 
 				@Override
 				public Long call(Long t) {
+					//按照key为0,1,2分为3组
 					return t % 3;
 				}
 			}).subscribe(new Action1<GroupedObservable<Long, Long>>() {

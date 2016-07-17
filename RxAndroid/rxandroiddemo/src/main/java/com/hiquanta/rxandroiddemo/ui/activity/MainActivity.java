@@ -1,5 +1,6 @@
 package com.hiquanta.rxandroiddemo.ui.activity;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -34,6 +35,8 @@ public class MainActivity extends BaseActivity
     NavigationView navigationView;
     BaseAdapter adapter;
 
+    FragmentManager fm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +47,13 @@ public class MainActivity extends BaseActivity
 
     private void initView() {
         setSupportActionBar(toolBar);
+        fm=getFragmentManager();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolBar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        viewPager.setAdapter(new CreateOperatorAdapter(MainActivity.this, getFragmentManager()));
+        viewPager.setAdapter(new CreateOperatorAdapter(MainActivity.this, fm));
         tabLayout.setupWithViewPager(viewPager);
 
     }
@@ -94,11 +98,12 @@ public class MainActivity extends BaseActivity
 
         if (id == R.id.nav_create) {
             // Handle the camera action
-            adapter = new CreateOperatorAdapter(MainActivity.this, getFragmentManager());
+            adapter = new CreateOperatorAdapter(MainActivity.this, fm);
             viewPager.setAdapter(adapter);
 
         } else if (id == R.id.nav_transform) {
-            adapter = new TransformAdapter(MainActivity.this, getFragmentManager());
+            adapter = new TransformAdapter(MainActivity.this, fm);
+
             viewPager.setAdapter(adapter);
 
         } else if (id == R.id.nav_filter) {
@@ -112,7 +117,6 @@ public class MainActivity extends BaseActivity
         }
 
         tabLayout.setupWithViewPager(viewPager);
-
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

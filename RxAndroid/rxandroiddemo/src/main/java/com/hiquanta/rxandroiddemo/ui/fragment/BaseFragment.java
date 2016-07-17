@@ -1,35 +1,28 @@
 package com.hiquanta.rxandroiddemo.ui.fragment;
 
 
+
+import android.app.AlertDialog;
 import android.app.Fragment;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+
+import com.hiquanta.rxandroiddemo.R;
+
+import butterknife.OnClick;
 
 /**
  * Created by hiquanta on 2016/7/13.
  */
-public  class BaseFragment extends Fragment implements android.view.View.OnClickListener{
-    public static BaseFragment newInstance() {
-        
-        Bundle args = new Bundle();
-        
-        BaseFragment fragment = new BaseFragment();
-        fragment.setArguments(args);
-        return fragment;
+public abstract class BaseFragment extends Fragment {
+
+    @OnClick(R.id.tipBt)
+    void tip() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(getTitleRes())
+                .setView(getActivity().getLayoutInflater().inflate(getDialogRes(), null))
+                .show();
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
+    protected abstract int getDialogRes();
+    protected abstract int getTitleRes();
 }

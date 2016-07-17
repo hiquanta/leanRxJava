@@ -27,7 +27,7 @@ public class Join {
                 });
 
         //产生0,10,20,30,40数列
-        Observable<Long> observable2 = Observable.timer(500, 10000, TimeUnit.MILLISECONDS)
+        Observable<Long> observable2 = Observable.timer(500, 1000, TimeUnit.MILLISECONDS)
                 .map(new Func1<Long, Long>() {
                     @Override
                     public Long call(Long aLong) {
